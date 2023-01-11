@@ -42,7 +42,7 @@ let topMovies = [
         title: 'The Horse Whisperer',
         year: 1998
     }
-]
+];
 
 //GET requests
 app.get('/',(req, res) => {
