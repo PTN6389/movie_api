@@ -1,4 +1,8 @@
-const express = require('express');
+const express = require('express'),
+     morgan = require('morgan'),
+     fs = require('fs'),
+     path = require('path');
+
 const app = express();
 
 let topMovies = [
@@ -43,6 +47,16 @@ let topMovies = [
         year: 1998
     }
 ];
+
+// create a write stream (in append mode)
+// a 'log.txt' file is created in root directory
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'),{flags: 'a'});
+
+//set up the logger
+app.use(morgan('combined',{stream: accessLogStream}));
+
+app.use(express.static('public'));
+  
 
 //GET requests
 app.get('/',(req, res) => {
