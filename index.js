@@ -48,6 +48,8 @@ let topMovies = [
     }
 ];
 
+
+/**** Logging ****/
 // create a write stream (in append mode)
 // a 'log.txt' file is created in root directory
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'),{flags: 'a'});
@@ -55,9 +57,10 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'),{fl
 //set up the logger
 app.use(morgan('combined',{stream: accessLogStream}));
 
+/**** Static Files ****/
 app.use(express.static('public'));
   
-
+/**** App Routing ****/
 //GET requests
 app.get('/',(req, res) => {
     res.send('Welcome to myFlix');
@@ -65,6 +68,12 @@ app.get('/',(req, res) => {
 
 app.get('/movies',(req, res) => {
     res.json(topMovies);
+});
+
+/***Error Handling ****/
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
 
 //listen for requests
