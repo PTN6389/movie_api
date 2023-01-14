@@ -169,8 +169,41 @@ app.get('/',(req, res) => {
 });
 
 app.get('/movies',(req, res) => {
-    res.json(topMovies);
+    res.json(movies);
 });
+
+app.get('/movies/:title',(req,res) => {
+    res.send('Successful GET request to get a single movie by title');
+});
+
+app.get('/movies/:title/:genre',(req,res) => {
+    res.send('Successful GET request of genre by title');
+});
+
+app.get('/movies/:director',(req,res) => {
+    res.send('Successful GET request of director by name');
+});
+            
+app.post('/users',(req,res) => {
+    res.send('Successfully registered new user');
+});
+
+app.put('/users/:user/:username',(req,res) => {
+    res.send('Sucessfully updated username');
+});
+            
+app.post('/users/:username/:title',(req,res) => {
+    res.send('Sucessfully added movie to your favorites');
+});
+
+app.delete('/users/:username/:title',(req,res) => {
+    res.send('Successfully removed movie from your favorites');
+});
+
+app.delete('/users/:username',(req,res) => {
+    res.send('Successfully removed user');
+});
+
 
 /***Error Handling ****/
 app.use((err, req, res, next) => {
