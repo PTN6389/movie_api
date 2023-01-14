@@ -4,46 +4,148 @@ const express = require('express'),
      path = require('path');
 
 const app = express();
+(description, genre, director, image URL, whether it's featured or not)
+director (bio, birth year, death year)
 
-let topMovies = [
+let movies = [
     {
         title: 'Dangerous Minds',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1995
     },
     {
         title: 'Die Hard',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1988
     },
     {
         title: 'Top Gun: Maverick',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 2022
     },
     {
         title: 'The Lion King',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1994
     },
     {
         title: 'Gone with the Wind',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1939
     },
     {
         title: 'A Few Good Men',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1992
     },
     {
         title: 'The Wizard of Oz',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1939
     },
     {
         title: 'The Equalizer',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 2014
     },
     {
         title: 'Contact',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1997
     },
     {
         title: 'The Horse Whisperer',
+        description: 'Movie description',
+        genre: 'Movie genre',
+        director: {
+            name: 'Director name',
+            bio: 'Director bio',
+            birthYear: 1970,
+            deathYear: 2023
+        },
+        imageURL: 'placeholder',
+        isFeatured: 1,
         year: 1998
     }
 ];
