@@ -4,8 +4,6 @@ const express = require('express'),
      path = require('path');
 
 const app = express();
-(description, genre, director, image URL, whether it's featured or not)
-director (bio, birth year, death year)
 
 let movies = [
     {
