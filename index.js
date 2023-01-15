@@ -171,14 +171,17 @@ app.get('/movies',(req, res) => {
 });
 
 app.get('/movies/:title',(req,res) => {
+    res.json(movies.find((movie) => {
+        return movie.title === req.params.title
+    }));
     res.send('Successful GET request to get a single movie by title');
 });
 
-app.get('/movies/:title/:genre',(req,res) => {
+app.get('/movies/:title/genre',(req,res) => {
     res.send('Successful GET request of genre by title');
 });
 
-app.get('/movies/:director',(req,res) => {
+app.get('/movies/:name',(req,res) => {
     res.send('Successful GET request of director by name');
 });
             
