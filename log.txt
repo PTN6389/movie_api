@@ -26,3 +26,4 @@
 ::1 - - [15/Jan/2023:00:54:34 +0000] "GET /movies/contact HTTP/1.1" 200 53 "-" "PostmanRuntime/7.30.0"
 ::1 - - [15/Jan/2023:00:57:24 +0000] "GET /movies/contact HTTP/1.1" 200 53 "-" "PostmanRuntime/7.30.0"
 ::1 - - [15/Jan/2023:00:59:53 +0000] "GET /movies/contact HTTP/1.1" 200 53 "-" "PostmanRuntime/7.30.0"
+::1 - - [15/Jan/2023:13:57:35 +0000] "GET /movies/[name]/director HTTP/1.1" 200 42 "-" "PostmanRuntime/7.30.0"
