@@ -1,9 +1,15 @@
 const express = require('express'),
      morgan = require('morgan'),
      fs = require('fs'),
-     path = require('path');
+     path = require('path'),
+     mongoose = require('mongoose'),
+     Models = require('./models.js');
 
 const app = express();
+const Movies = Models.Movie;
+const Users = Models.User;
+
+mongoose.connect('mongodb://localhost:27017/myflix', { useNewUrlParser: true, useUnifiedTopology: true});
 
 let movies = [
     {
