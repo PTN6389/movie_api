@@ -34,34 +34,76 @@
                 <td>None</td>
                 <td>JSON object with details about a single movie (description, genre, director, image URL, whether it's featured or not)
                   <p>  {
-                        title: 'Top Gun: Maverick',
-                        description: 'Movie description',
-                        genre: 'Movie genre',
-                        director: {
-                            name: 'Director name',
-                            bio: 'Director bio',
-                            birthYear: 1970,
-                            deathYear: 2023
-                        },
-                        imageURL: 'placeholder',
-                        isFeatured: 1,
-                        year: 2022
-                    }</p>
+                    "genre": {
+                        "name": "Drama",
+                        "description": "Movie defined by conflict"
+                    },
+                    "director": {
+                        "name": "Robert Redford",
+                        "bio": "American actor and director",
+                        "birthYear": 1936
+                    },
+                    "actors": [],
+                    "_id": "63d4535436c42bb070d0d1a3",
+                    "title": "The Horse Whisperer",
+                    "description": "A unique horse trainer helps a severily traumatized horse and at the same time helps the owner.",
+                    "imageURL": "https://www.imdb.com/title/tt0119314/",
+                    "isFeatured": true,
+                    "year": 1998
+                }</p>
                 </td>
             </tr>
             <tr>
                 <td>Return data about a genre (description) by name/title (e.g., “Thriller”)</td>
-                <td>/movies/[title]/genre</td>
+                <td>/movies/genre/[name]</td>
                 <td>GET</td>
                 <td>None</td>
-                <td>Text message with the genre for a movie title</td>
+                <td>JSON object with the genre for a movie title
+                    <p>{
+                        "genre": {
+                            "name": "Drama",
+                            "description": "Movie defined by conflict"
+                        },
+                        "director": {
+                            "name": "John N. Smith",
+                            "bio": "Canadian film director and screenwriter",
+                            "birthYear": 1943
+                        },
+                        "actors": [],
+                        "_id": "63d44cd136c42bb070d0d19a",
+                        "title": "Dangerous Minds",
+                        "description": "U.S. Marine LouAnne Johnson, who in 1989 took up a teaching position at Carlmont High School in Belmont, California, where most of her students were African-American and Latino teenagers from East Palo Alto, a racially segregated and economically deprived city. Michelle Pfeiffer stars as Johnson.",
+                        "imageURL": "https://www.imdb.com/title/tt0112792/",
+                        "isFeatured": true,
+                        "year": 1995
+                    }</p>
+                </td>
             </tr>
             <tr>
                 <td>Return data about a director by name</td>
-                <td>/movies/[director]</td>
+                <td>/movies/director/[name]</td>
                 <td>GET</td>
                 <td>None</td>
-                <td>JSON object with details about a director (bio, birth year, death year)</td>
+                <td>JSON object with details about a director (bio, birth year, death year)
+                    <p>{
+                        "genre": {
+                            "name": "Action",
+                            "description": "Movie with explosions, chases and/or combat"
+                        },
+                        "director": {
+                            "name": "Antoine Fuqua",
+                            "bio": "American film director",
+                            "birthYear": 1965
+                        },
+                        "actors": [],
+                        "_id": "63d4530f36c42bb070d0d1a1",
+                        "title": "The Equalizer",
+                        "description": "A man who believes he has put his mysterious past behind him cannot stand idly by when he meets a young girl under the control of ultra-violent Russian gangsters.",
+                        "imageURL": "https://www.imdb.com/title/tt0455944/",
+                        "isFeatured": true,
+                        "year": 2014
+                    }</p>
+                </td>
             </tr>
             <tr>
                 <td>Allow new users to register</td>
