@@ -49,7 +49,7 @@ app.get('/movies/:title',(req,res) => {
 app.get('/movies/genre/:name',(req,res) => {
     Movies.findOne({ "genre.name": req.params.name})
     .then((movies) => {
-        res.json(movies);
+        res.json(movies.genre);
     })
     .catch((err) => {
         console.error(err);
@@ -60,7 +60,7 @@ app.get('/movies/genre/:name',(req,res) => {
 app.get('/movies/director/:name',(req,res) => {
     Movies.findOne({ "director.name": req.params.name })
     .then((movies) => {
-        res.json(movies);
+        res.json(movies.director);
     })
     .catch((err) => {
         console.error(err);
