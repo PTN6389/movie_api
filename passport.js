@@ -9,11 +9,11 @@ let Users = Models.User,
 
 // LocalStrategy takes username and password from the request body and uses Mongoose to check db for user with that username.
 passport.use(new LocalStrategy({
-    nameField: 'Name',
-    passwordField: 'Password'
+    usernameField: 'name',
+    passwordField: 'password'
 }, (name, password, callback) => {
     console.log(name + ' ' + password);
-    Users.findOne({ Name: name }, (error,user) => {
+    Users.findOne({ name: name }, (error,user) => {
         if(error) {
             console.log(error);
             return callback(error);
