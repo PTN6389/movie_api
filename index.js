@@ -91,7 +91,7 @@ app.get('/movies/director/:name', passport.authenticate('jwt', { session: false 
     });
 });
             
-app.post('/users', [
+app.post('/users', passport.authenticate('jwt', { session: false }), [
     check('name', 'Name is required').isLength({min: 5}),
     check('name', 'Name constains non alphanumeric characters - not allowed').isAlphanumeric(),
     check('password', 'Password is required').not().isEmpty(),
@@ -99,13 +99,13 @@ app.post('/users', [
 ], (req,res) => {
 
     //check the validation object for errors
-    let errors = validationResults(req);
+    let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
     }
 
-    let hashPassword = Users.hashPassword(req.body.password);
+    let hashedPassword = Users.hashPassword(req.body.password);
     Users.findOne({ name: req.body.name })
         .then((users) => {
             if (users) {
