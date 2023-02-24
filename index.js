@@ -34,8 +34,8 @@ require('./passport');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-//mongoose.connect('mongodb://127.0.0.1:27017/myflix', { useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect(process.env.CONNECTION_URI , { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://myflixdb.3sxacet.mongodb.net/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect(process.env.CONNECTION_URI , { useNewUrlParser: true, useUnifiedTopology: true});
 
 /**** Logging ****/
 // create a write stream (in append mode)
@@ -97,7 +97,7 @@ app.post('/users', passport.authenticate('jwt', { session: false }), [
     check('password', 'Password is required').not().isEmpty(),
     check('email', 'Email does not appear to be valid').isEmail()
 ], (req,res) => {
-
+console.log(req)
     //check the validation object for errors
     let errors = validationResult(req);
 
