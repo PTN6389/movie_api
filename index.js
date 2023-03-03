@@ -34,7 +34,23 @@ require('./passport');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect('mongodb+srv://myflixdb.3sxacet.mongodb.net/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
+
+const connectDatabase = async () => {
+    try {
+        mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
+  
+      console.log("connected to database");
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+  };
+  
+  connectDatabase();
+  
+
+//mongoose.connect('mongodb+srv://myflixdb.3sxacet.mongodb.net/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
 //mongoose.connect(process.env.CONNECTION_URI , { useNewUrlParser: true, useUnifiedTopology: true});
 
 /**** Logging ****/
