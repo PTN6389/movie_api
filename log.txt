@@ -132,3 +132,5 @@
 127.0.0.1 - - [24/Feb/2023:16:00:53 +0000] "POST /users HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.0"
 127.0.0.1 - - [24/Feb/2023:16:05:54 +0000] "GET / HTTP/1.1" 200 17 "-" "PostmanRuntime/7.31.0"
 127.0.0.1 - - [03/Mar/2023:15:39:36 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.1"
+127.0.0.1 - - [08/Mar/2023:23:10:53 +0000] "GET /movies HTTP/1.1" 200 5604 "-" "PostmanRuntime/7.31.1"
+127.0.0.1 - - [09/Mar/2023:00:07:06 +0000] "GET /movies/The%20Horse%20Whisperer HTTP/1.1" 401 - "-" "PostmanRuntime/7.31.1"
