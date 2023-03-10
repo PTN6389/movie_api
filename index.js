@@ -57,7 +57,7 @@ app.get('/',(req, res) => {
     res.send('Welcome to myFlix');
 });
 
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies', (req, res) => {
     Movies.find().then((movies) => res.json(movies));
 });
 
