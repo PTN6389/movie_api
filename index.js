@@ -36,8 +36,6 @@ const Users = Models.User;
 
 //mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
 
-//mongoose.connect('mongodb+srv://myflixdb.3sxacet.mongodb.net/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
-//mongoose.connect('mongodb+srv://root:root@myflixdb.3sxacet.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connect(process.env.CONNECTION_URI , { useNewUrlParser: true, useUnifiedTopology: true});
 
 /**** Logging ****/
@@ -57,7 +55,7 @@ app.get('/',(req, res) => {
     res.send('Welcome to myFlix');
 });
 
-app.get('/movies',(req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find().then((movies) => res.json(movies));
 });
 
