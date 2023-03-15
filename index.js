@@ -92,7 +92,7 @@ app.get('/movies/director/:name', passport.authenticate('jwt', { session: false 
     });
 });
             
-app.post('/users', passport.authenticate('jwt', { session: false }), [
+app.post('/users', [
     check('name', 'Name is required').isLength({min: 5}),
     check('name', 'Name constains non alphanumeric characters - not allowed').isAlphanumeric(),
     check('password', 'Password is required').not().isEmpty(),
