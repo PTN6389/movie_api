@@ -28,12 +28,12 @@ let userSchema = mongoose.Schema({
 });
 
 userSchema.statics.hashPassword = (password) => {
-    console.log(bcrypt.hashSync(password));
+    //console.log(bcrypt.hashSync(password));
     return bcrypt.hashSync(password, 10);
 };
 
 userSchema.methods.validatePassword = function(password) {
-    console.log(bcrypt.hashSync('password1',10));
+    //console.log(bcrypt.hashSync('password1',10));
     return bcrypt.compareSync(password, this.password);
 };
 

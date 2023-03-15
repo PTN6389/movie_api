@@ -108,8 +108,8 @@ console.log(req)
 
     let hashedPassword = Users.hashPassword(req.body.password);
     Users.findOne({ name: req.body.name })
-        .then((users) => {
-            if (users) {
+        .then((user) => {
+            if (user) {
                 return res.status(400).send(req.body.name + 'already exists');
             } else {
                 Users
@@ -119,7 +119,7 @@ console.log(req)
                         email: req.body.email,
                         birthday: req.body.birthday
                     })
-                    .then((users) => { res.status(201).json(users) })
+                    .then((user) => { res.status(201).json(user) })
                     .catch((error) => {
                         console.error(error);
                         res.status(500).send('Error: ' + error);
