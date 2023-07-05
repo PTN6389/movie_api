@@ -132,6 +132,17 @@ console.log(req)
         });
 });
 
+app.get('/users/:user/:name', passport.authenticate('jwt', { session: false }), (req,res) => {
+    Users.findOne({ name: req.params.name })
+    .then((users) => {
+        res.json(users);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+    });
+});
+
 app.put('/users/:user/:name', passport.authenticate('jwt', { session: false }), 
     [check('name', 'Username is required').isLength({min: 5}),
     check('name', 'Username contains non alphanumeric characters').isAlphanumeric(),
