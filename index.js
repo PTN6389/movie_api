@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true}));
 const cors = require('cors');
 let allowedOrigins = ['http://localhost:8080', 'http://localhost:4200', 'http://testsite.com', 
                         'http://localhost:1234', 'https://myflix-ptn.netlify.app', 'https://ptn6389.github.io',
-                        'http://18.218.255.210', 'https://18.218.255.210', 'https://myflix-movieapp.herokuapp.com'];
+                        'http://18.218.255.210', 'https://18.218.255.210', 'https://myflix-movieapp.herokuapp.com',
+                        'http://myflix-client-aws.s3-website.us-east-2.amazonaws.com'];
 
 app.use(cors({
     origin: (origin, callback) => {
